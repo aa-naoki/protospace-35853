@@ -28,7 +28,7 @@ class PrototypesController < ApplicationController
   end
   
   def edit
-    unless user_signed_in?
+    unless current_user == user_signed_in?
       redirect_to action: :index
     end
   end
